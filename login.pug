@@ -1,0 +1,33 @@
+doctype html
+html 
+    head
+        link(rel="style.css",href="style.css")
+    tite="garbage and sewage project"
+    
+      
+body
+    div
+      .mybanner
+        h2 STAY CLEAN-
+          i The cleanest option!
+
+      form#loginForm(action='homePage.html' method='post')
+      .transbox
+        #signInLabel Sign in
+        div
+          input(type='text' id='user' name='user' placeholder='Username' required)
+        div
+          input(type='password' id='password' name='password' autocomplete='off' placeholder='Password' required)
+        div
+        div
+            label
+              input#remember(type='checkbox' name='remember' value='remember')
+              | remember me
+            input(type='code' id='rem_code' name='rem_code' placeholder='remember me' hidden readonly)
+        #submitDiv
+              input#submit.button(type='submit' value='Sign in')
+
+        #footer
+          p Author: Akoth Catherine Cecilia
+            br
+            a(href='mailto:catherinececilia22@gmail.com') catherinececilia22@gmail.com
