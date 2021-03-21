@@ -1,0 +1,297 @@
+extend layout 
+block content
+  head
+    
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    |   
+    title register truck Conductors
+    style.
+      input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: rgb(209, 214, 216);
+      }
+      input[type=date], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color:rgb(209, 214, 216);;
+      }
+      a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      }
+      a:hover {
+      background-color: #ddd;
+      color: black;
+      }
+      .previous {
+      background-color: #f1f1f1;
+      color: black;
+      }
+      .next {
+      background-color: #4CAF50;
+      color: white;
+      }
+      .round {
+      border-radius: 50%;
+      }
+      H3{
+      text-align: center;
+      }
+      input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      }
+      .header {
+      padding: 1px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      font-size: 10px;
+      }
+      input[type=submit]:hover {
+      background-color: #45a049;
+      }
+  body
+    .header
+      h1 STAY CLEAN-THE CLEANEST OPTION 
+          
+      script.
+        document.write( new Date().getFullyear() );
+      
+    .card
+      .card-header
+         Featured
+           
+      .card-body
+        h5.card-title VISION
+               
+        p.card-text get to know us better
+              
+        a.btn.btn-primary(href='#')  click me
+       
+    h3 TRUCK CONDUCTOR REGISTRATION FORM
+     
+    div
+      .container-fluid
+        .row
+          .col-4
+            .card
+              .card-body
+                h5.card-title adverts
+                              
+                p.card-text we have some ads
+                              
+                a.btn.btn-primary(href='#') click me
+                     
+                      
+            .card
+              .card-body
+                h5.card-title stay clean
+                              
+                p.card-text click on click for more
+                             
+                a.btn.btn-primary(href='#') Click me
+                      
+                      
+            .card
+              .card-body
+                h5.card-title mission
+                              
+                p.card-text get to know more
+                               
+                a.btn.btn-primary(href='#') click me
+                  
+                   
+          .col-8
+            form(action='#', name='conductorRegForm')
+              label(for='fname') First Name
+                          
+              input#fname(type='text', name='firstname', placeholder="Conductor's First Name")
+                      
+                          
+              label(for='lname') Last Name
+                          
+              input#lname(type='text', name='lastname', placeholder="Conductor's last Name")
+                     
+                          
+              label(for='oname') Other Names
+                          
+              input#oname(type='text', name='othername', placeholder="Conductors's Other Names")
+                      
+                          
+              label(for='gender') Gender
+                           
+              select#gender(name='gender')
+                option(value='')
+
+                option(value='Female') Female
+                               
+                option(value='Male') Male
+                           
+              label(for='date') D.O.B:
+                           
+              input(type='date', id='date', name='date')
+                       
+                           
+              label(for='nin') NIN
+                           
+              input#nin(type='text', name='nin', placeholder="Conductors's Identification Number", *='')
+                           
+              label(for='cresidence') Residence
+                          
+              input#cresidence(type='text', name='cresidence', placeholder="Conductors's Residence No.")
+                       
+                      
+                      
+              input(type='submit', value='Submit')
+
+            script.
+              const name1 = document.conductorRegForm.fname;
+              const name2= document.conductorRegForm.lname;
+              const gender1= document.conductorRegForm.gender;
+              const date1 = document.conductorRegForm.date;
+              const nin1 = document.conductorRegForm.nin;
+              const residence = document.conductorRegForm.cresidence;
+              const Incidences = document.conductorRegForm.cincidences;
+              /** Validating first name so that it starts with a capital letter, can not be left empty, has more than 1 character and less than 51 characters.
+              An alert will be thrown incase any of the validations is violated and the field will be highted with red borders.
+              */
+              const nameFunction = () => {
+              const min = 2;
+              const max = 50;
+              const letters = /^[A-Z]+[a-zA-Z]*$/
+              if (name1.value === '') {
+              alert('please fill in the first name');
+              name1.style.border = '2px solid red';
+              name1.focus();
+              } else {
+              if (name1.value.length < min) {
+              name1.focus();
+              name1.style.border = '2px solid red';
+              alert('The first name must be more than 1 character!');
+              }else{
+              if(name1.value.length>max){
+              name1.focus();
+              name1.style.border = '2px solid red'
+              } else {
+              if (!name1.value.match(letters)) {
+              name1.focus();
+              name1.style.border = '2px solid red';
+              alert('The first name must start with a capital letter.');
+              return false;
+              } // Ensures only alphabetical characters are fill-in.
+              return true;
+              } // Ensures the name field has more than 3 characters.
+              return true;
+              } // checks if the name field is empty!
+              return true;
+              };
+              }
+              // for last name
+              const nameFunction1 = () => {
+              const min = 2;
+              const max = 50;
+              const letters = /^[A-Z]+[a-zA-Z]*$/
+              if (name2.value === '') {
+              alert('please fill in the last name!');
+              name2.style.border = '2px solid red';
+              name2.focus();
+              }else {
+              if (name2.value.length < min) {
+              name2.focus();
+              name2.style.border = '2px solid red';
+              alert('The last name must be more than 1 character!');
+              }else{
+              if(name2.value.length>max){
+              name2.focus();
+              name2.style.border = '2px solid red'
+              }else{
+              if (!name2.value.match(letters)) {
+              name2.focus();
+              name2.style.border = '2px solid red';
+              alert('The last name must start with a capital letter.');
+              return false;
+              } // Ensures only alphabetical characters are fill-in.
+              return true;
+              } // Ensures the name field has more than 3 characters.
+              return true;
+              } // checks if the name field is empty!
+              return true;
+              }
+              }
+
+              const residenceFunction = () => {
+              if (residence.value === '') {
+              residence.style.border = '2px solid red';
+              alert('Please include driver residence');
+              residence.focus();
+              } else {
+              return true;
+              } //  Ensure residence field is not empty.
+              return true;
+              };
+              const valueDate = ()=>{
+              if(date1.value === ''){
+              date1.style.border= '2px solid red';
+              alert('date is empty,please fill it');
+              date1.focus();
+              }else{
+              return true;
+              }
+              return true
+              };
+
+              const genderFunction = ()=>{
+              if(gender1.value === ''){
+              gender1.style.border= '2px solid red';
+              alert('gender is empty,please fill it');
+              gender1.focus();
+              }else{
+              return true;
+              }
+              return true
+              };
+
+              const ninFunction = ()=>{
+              if(nin1 .value === ''){
+              nin1 .style.border= '2px solid red';
+              alert('NIN is empty,please fill it');
+              nin1.focus();
+              }else{
+              return true;
+              }
+              return true
+              };
+
+              const validation = () => {
+              nameFunction();
+              nameFunction1();
+              residenceFunction();
+              valueDate();
+              ninFunction();
+              genderFunction
+              };
+              document.conductorRegForm.addEventListener('submit', validation); // Watches the validity of data filled in.
+                
+                      
+            
+                    
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0', crossorigin='anonymous')

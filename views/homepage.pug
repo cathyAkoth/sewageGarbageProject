@@ -1,0 +1,164 @@
+doctype html
+html(lang='en')
+  head
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    |    
+    |         
+    title home page
+    |         
+    style.
+      body{
+      background-color:white;
+      }
+      .list-group-item{
+      background-color: skyblue;
+      }
+      .col-3{
+      column-width: auto;
+      }
+      .btn {
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-block;
+      }
+      .btn:hover {background:blue;}
+      .mybanner {
+      border: 0px;
+      background-color:rgb(73, 170, 73);
+      text-align: left;
+      height: 40px;
+      }
+      #footer{
+      width:100%;
+      height:10%;
+      position:fixed;
+      bottom:0;
+      left:0;
+      background-color:green;
+      }
+      .header {
+      padding: 1px;
+      text-align: center;
+      background: #1abc9c;
+      color: green;
+      font-size: 10px;
+      }
+  |     
+  body
+    .header
+      h1
+        | STAY CLEAN-
+        i The cleanest option!
+      |  
+      |     
+      script.
+        var name = prompt("Tell me your name");
+        document.write("Hello " + name + ", nice to meet you");
+    |    
+    .container-fluid
+      .row
+        .col.w-100
+          .card
+            .card-body
+            
+              script(type='text/javascript').
+                document.write("<left><font size=+1 style='color: green;'>");
+                var day = new Date();
+                var hr = day.getHours();
+                
+                if (hr >= 0 && hr < 12) {
+                document.write("Good Morning!Welcome to STAY CLEAN!");
+                } else if (hr == 12) {
+                document.write("Good Noon!Welcome to STAY CLEAN!");
+                } else if (hr >= 12 && hr <= 17) {
+                document.write("Good Afternoon!Welcome to STAY CLEAN!");
+                } else {
+                document.write("Good Evening!Welcome to STAY CLEAN!");
+                }
+                document.write("</font></left>");
+      |         
+      |           
+      .container-fluid
+        .row
+          .col-3
+            .card(style='width:18rem;')
+              img.card-img-top(src='images/image.jpg', alt='...')
+              |                   
+              .card-body
+                h5.card-title STAY CLEAN-MUYENGA
+                |                     
+                p.card-text
+                  | Always ensure that the services we provide to our clients and potential clients are top notch.
+                  br
+                  | remember to always give detailed descriptions of our services.
+              |                   
+              ul.list-group.list-group-flush
+                li.list-group-item
+                  a(href='driver') Register Truck Driver
+                |                     
+                li.list-group-item
+                  a(href='conductor') Register Truck Conductor
+                |                     
+                li.list-group-item
+                  a(href='request') Register Requests
+              |                   
+              .card-body
+                a.card-link(href='login1') LANDING PAGE
+                |                     
+                a.card-link(href='conductor') conductor Registration.
+              .card-body
+                a.card-link(href='#') Card link
+                |                     
+                a.card-link(href='#') Another link
+          |          
+          .col-9
+            .card
+              .card-body
+                .dropdown
+                  button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                    | select catergory
+                  |                 
+                  ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
+                    ul.dropdown-menu(aria-labelledby='dropdownMenu2')
+                    | &gt;
+                    |                   
+                    li
+                      button.dropdown-item(type='button') TRUCK DRIVERS
+                    |                   
+                    li
+                      button.dropdown-item(type='button') EMPLOYEES
+                    |                   
+                    li
+                      button.dropdown-item(type='button') TRUCKS
+                    |                   
+                    li
+                      button.dropdown-item(type='button') CONDUCTORS
+                    |                   
+                    li
+                      button.dropdown-item(type='button') REQUESTS
+                    |                   
+                    li
+                      button.dropdown-item(type='button') CLIENTS
+                  |                 
+                  button.btn.success Lists
+                  |                 
+                  button.btn.info Search
+                  |                 
+                  button.btn.info register
+                |               
+                div
+            |           
+            #footer
+              p
+                | Author: Akoth Catherine Cecilia
+                br
+                |             
+                a(href='mailto:catherinececilia22@gmail.com') catherinececilia22@gmail.com
+            |          
+            |        
+            |     
+            script(scr='<script', src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0', crossorigin='anonymous')
+            | &gt;
+            script.

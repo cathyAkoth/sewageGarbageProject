@@ -17,14 +17,17 @@ app.use(express.static('public'));
 
 // routes.
 
-app.get('/login', (req, res) => {
-    res.render('login');
-    });
+
     
 app.get('/employee', (req, res) => {
         res.render('employeeReg');
       });
 
+app.get('/request', (req, res) => {
+        res.render('customerRequest');
+      });   
+      
+       
 app.get('/driver', (req,res)=>{
         res.render('driverReg')
 })
