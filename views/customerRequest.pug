@@ -1,0 +1,65 @@
+
+extend layout
+block content
+    
+    title customer Request
+
+    body
+    .container-fluid 
+      
+      .row
+        .col
+          |
+        .col
+          form(action='#', name='customerReqForm')
+            label(for='fname') First Name
+            |         
+            input#fname(type='text', name='firstname', placeholder="Customer's First Name")
+            |     
+            |         
+            label(for='lname') Last Name
+            |         
+            input#lname(type='text', name='lastname', placeholder="customer's last Name")
+            |     
+            |         
+            label(for='gender') Gender
+            |         
+            select#gender(name='gender')
+              option(value='')
+              |  
+              |         
+              option(value='Female') Female
+              |         
+              option(value='Male') Male
+            |         
+            label(for='telephoneNo') Phone Number:
+            |         
+            input#telephoneNo1(type='string', name='telephoneNo')
+            |     
+            |         
+            label(for='nin') NIN
+            |         
+            input#nin(type='text', name='nin', placeholder="Driver's Identification Number", *='')
+            |     
+            label(for='location') Location
+            |         
+            input#location1(type='text', name='location', placeholder="Customer's location")
+            |     
+            label(for='service')  Service Requested
+            br       
+            input#service1(type='checkbox', name='service1', value='garbage')
+            |   
+            label(for='service1')  Garbage
+            
+            |   
+            input#service2(type='checkbox', name='service2', value='sewage')
+            |   
+            label(for='service2')  Sewage
+            
+            input(type='submit', value='Save')
+
+              
+        .col
+          | 3 of 3
+
+          

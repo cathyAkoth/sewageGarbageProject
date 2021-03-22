@@ -1,7 +1,9 @@
-extends layout 
-block content
-
-
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    
   head
     
     title register employee
@@ -13,10 +15,10 @@ block content
     form#signupForm(action='#' method='post')
      
        label
-              first Name 
+              first 
               input#firstname(type='text' name='firstname' placeholder ='firstname')
        label
-              last  Name 
+              last   
               input#lastname(type='text' name='lastname' placeholder ='lastname') 
               br
        label
@@ -24,7 +26,7 @@ block content
               email 
               input#email(type='text' name='email' placeholder ='email')       
               br            
-              User
+              User 
               userName 
               input#username(type='text' name='username' placeholder ='username')     
               br
