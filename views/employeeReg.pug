@@ -1,40 +1,76 @@
-html
-  head
-    meta(charset="UTF-8")
-    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
-    meta(http-equiv="X-UA-Compatible" content="ie=edge")
-    
+extends layout
+block content
   head
     
     title register employee
     
+
+
   body
     .header
-      h1 STAY CLEAN-
+      h1
+        | STAY CLEAN-
         i THE CLEANEST OPTION
-    form#signupForm(action='#' method='post')
-     
-       label
-              first 
-              input#firstname(type='text' name='firstname' placeholder ='firstname')
-       label
-              last   
-              input#lastname(type='text' name='lastname' placeholder ='lastname') 
-              br
-       label
-              Email 
-              email 
-              input#email(type='text' name='email' placeholder ='email')       
-              br            
-              User 
-              userName 
-              input#username(type='text' name='username' placeholder ='username')     
-              br
-              Password 
-              password  
-              input#password(type='password' name='password' placeholder ='password')  
-              #submitDiv
-              input#submit.button(type='submit' value='REGISTER')    
+   
+  .container-fluid
+    .row
+        .col-4 
+        
+        
+                
+        .col-5
+          fieldset
+            legend  EMPLOYEE REGISTRATON/SIGN UP
+
+              form(method='POST',action='/employee/employeeReg', name='employeeRegForm',enctype="multipart/form-data")
+                label(for='fname') 
+                |         
+                input#fname(type='text', name='firstname', placeholder=" First Name")
+
+                
+                |     
+                br|         
+                label(for='lname') 
+                |         
+                input#lname(type='text', name='lastname', placeholder="last Name")
+                |     
+                |         
+                label(for='gender')
+                |         
+                select#gender(name='gender',placeholder="select gender")
+                  option(value='')
+                  |  
+                  |         
+                  option(value='Female') Female
+                  |         
+                  option(value='Male') Male
+
+                label(for='age') 
+
+                input#age(type='number', name=age, placeholder="age")
               
+                |         
+                label(for='date')
+                |         
+                input#date(type='date', name='date', placeholder='date of birth')
+                |     
+                label(for='telephoneNo') 
+                |         
+                input#telephoneNo1(type='string', name='telephoneNo',placeholder='+256-----------')
+
+                label(for='userName') 
+                input#user1(type ='string', name = 'userName',placeholder='uaer Name') 
+
+                label(for = 'password') 
+                input#password(type="password",name = 'password',placeholder='password')  
+
+                label(for='image') Image
+                input#image(type='file',name='image')    
+                
+                input(type='submit', value='REGISTER')
+
+            .col-3     
+            
+            
 
               
