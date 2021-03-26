@@ -23,19 +23,19 @@ block content
             legend  EMPLOYEE REGISTRATON/SIGN UP
 
               form(method='POST',action='/employee/employeeReg', name='employeeRegForm',enctype="multipart/form-data")
-                label(for='fname') 
+                label(for='fname') First Name
                 |         
                 input#fname(type='text', name='firstname', placeholder=" First Name")
 
                 
                 |     
                 br|         
-                label(for='lname') 
+                label(for='lname') last Name
                 |         
                 input#lname(type='text', name='lastname', placeholder="last Name")
                 |     
                 |         
-                label(for='gender')
+                label(for='gender') Gender
                 |         
                 select#gender(name='gender',placeholder="select gender")
                   option(value='')
@@ -45,23 +45,25 @@ block content
                   |         
                   option(value='Male') Male
 
-                label(for='age') 
+                label(for='age') Age
 
                 input#age(type='number', name=age, placeholder="age")
               
-                |         
-                label(for='date')
+                label(for='nin') NIN
+
+                input#age(type='string', name=nin, placeholder="nin")|         
+                label(for='date') Date of birth
                 |         
                 input#date(type='date', name='date', placeholder='date of birth')
                 |     
-                label(for='telephoneNo') 
+                label(for='telephoneNo') phone Number
                 |         
-                input#telephoneNo1(type='string', name='telephoneNo',placeholder='+256-----------')
+                input#telephoneNo1(type='string', name='telephoneNo')
 
-                label(for='userName') 
+                label(for='userName') UserName
                 input#user1(type ='string', name = 'userName',placeholder='uaer Name') 
 
-                label(for = 'password') 
+                label(for = 'password') Password
                 input#password(type="password",name = 'password',placeholder='password')  
 
                 label(for='image') Image

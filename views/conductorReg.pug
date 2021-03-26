@@ -76,16 +76,7 @@ block content
       script.
         document.write( new Date().getFullyear() );
       
-    .card
-      .card-header
-         Featured
-           
-      .card-body
-        h5.card-title VISION
-               
-        p.card-text get to know us better
-              
-        a.btn.btn-primary(href='#')  click me
+    
        
     h3 TRUCK CONDUCTOR REGISTRATION FORM
      
@@ -93,34 +84,9 @@ block content
       .container-fluid
         .row
           .col-4
-            .card
-              .card-body
-                h5.card-title adverts
-                              
-                p.card-text we have some ads
-                              
-                a.btn.btn-primary(href='#') click me
-                     
-                      
-            .card
-              .card-body
-                h5.card-title stay clean
-                              
-                p.card-text click on click for more
-                             
-                a.btn.btn-primary(href='#') Click me
-                      
-                      
-            .card
-              .card-body
-                h5.card-title mission
-                              
-                p.card-text get to know more
-                               
-                a.btn.btn-primary(href='#') click me
-                  
+            
                    
-          .col-8
+          .col-5
             form(action='#', name='conductorRegForm')
               label(for='fname') First Name
                           
@@ -162,6 +128,8 @@ block content
                       
                       
               input(type='submit', value='Submit')
+
+          .col-3 
 
             script.
               const name1 = document.conductorRegForm.fname;

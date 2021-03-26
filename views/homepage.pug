@@ -53,9 +53,7 @@ html(lang='en')
         i The cleanest option!
       |  
       |     
-      script.
-        var name = prompt("Tell me your name");
-        document.write("Hello " + name + ", nice to meet you");
+      
     |    
     .container-fluid
       .row
@@ -84,7 +82,7 @@ html(lang='en')
         .row
           .col-3
             .card(style='width:18rem;')
-              img.card-img-top(src='images/image.jpg', alt='...')
+              img.card-img-top(src='./public/images/truck1.jpg', alt='...')
               |                   
               .card-body
                 h5.card-title STAY CLEAN-MUYENGA
@@ -96,18 +94,18 @@ html(lang='en')
               |                   
               ul.list-group.list-group-flush
                 li.list-group-item
-                  a(href='driver') Register Truck Driver
+                  a(href='driver/driverReg') Register Truck Driver
                 |                     
                 li.list-group-item
-                  a(href='conductor') Register Truck Conductor
+                  a(href='conductor/conductorReg') Register Truck Conductor
                 |                     
                 li.list-group-item
-                  a(href='request') Register Requests
+                  a(href='request/customerRequest') Register Requests
               |                   
               .card-body
-                a.card-link(href='login1') LANDING PAGE
+                a.card-link(href='login1/loginPage') LANDING PAGE
                 |                     
-                a.card-link(href='conductor') conductor Registration.
+                a.card-link(href='conductor/conductorReg') conductor Registration.
               .card-body
                 a.card-link(href='#') Card link
                 |                     

@@ -1,0 +1,70 @@
+body{
+    background-image: url("images/image4.jpg");
+    background-repeat: no-repeat;
+    
+  }
+    .mybanner{
+      border: 0px;
+      background-color: #45a049;    
+      text-align: center; 
+      color:beige;
+      font-size: 25px;
+      height: 80px;
+      }
+      #signInLabel{
+        text-align: center;
+        color: beige;
+      }
+      div.transbox{
+  border-radius: 5px;
+  background-color: #45a049;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto; 
+  opacity: 0.8;
+}
+#footer{
+  width:100%;
+  height:10%;   
+  position:absolute;
+  bottom:0;
+  left:0;
+  background-color: #45a049;
+    
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: beige;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+
+
+input[type=submit]:hover {
+  background-color:rgb(100, 100, 204);
+}

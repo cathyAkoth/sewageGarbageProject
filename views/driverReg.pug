@@ -5,7 +5,7 @@ html(lang='en')
     meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
 
-    link(rel='stylesheet', href='/stylesheet/driver.css')
+    link(rel='stylesheet', href='/css/driver.css')
     
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
     
@@ -21,42 +21,10 @@ html(lang='en')
     .row
         .col-4 
         
-          .card
-            .card-body
-              h5.card-title ENTRY
-
-              p.card-text learn more about our 
-              |           
-              a.btn.btn-primary(href='#') Read More
-          |       
-
-             
-          .card
-            .card-body
-              h5.card-title VISIONS
-                        
-              p.card-text learn more about our 
-              |           
-              a.btn.btn-primary(href='#') Read More
-          |       
-          |       
-          .card
-            .card-body
-              h5.card-title Future Projects
-              |           
-              p.card-text learn more about our future projects.
-              |           
-              a.btn.btn-primary(href='#') Read more
-        
-          .card
-            .card-body
-              h5.card-title Future Projects
-              |           
-              p.card-text learn more about our future projects.
-              |           
-              a.btn.btn-primary(href='#') Read more
-                
+          
+              
         .col-5 
+       
           form(action='#', name='driverRegForm')
             label(for='fname') First Name
             |         
@@ -119,60 +87,8 @@ html(lang='en')
 
         |     
         .col-3
-            .card.text-white.bg-primary
-            .card-header Header
-            |   
-            .card-body
-              
-              h5.card-title Primary card title
-              img.card(src='images/image.jpg', alt='...')
-              |     
-              p.card-text
-                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-            .card.text-white.bg-secondary.mb-3(style='max-width: 18rem;')
-            .card-header Header
-            |   
-            .card-body
-              h5.card-title Secondary card title
-              |     
-              p.card-text
-                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-            .card.text-white.bg-success.mb-3(style='max-width: 18rem;')
-            .card-header Header
-            |   
-            .card-body
-              h5.card-title Success card title
-              |     
-              p.card-text
-                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-            .card.text-white.bg-danger.mb-3(style='max-width: 18rem;')
-              .card-header Header
-            |   
-            .card-body
-              h5.card-title Danger card title
-              |     
-              p.card-text
-                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-            .card.text-dark.bg-warning.mb-3(style='max-width: 18rem;')
-            .card-header Header
-            |   
-            .card-body
-              h5.card-title Warning card title
-              |     
-              p.card-text
-                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-            .card.text-dark.bg-info.mb-3(style='max-width: 18rem;')
-            .card-header Header
-            |   
-            .card-body
-              
-
-    
-                
-          
-      
-          
-                
+            
+     
 
             script.
               const name1 = document.driverRegForm.fname;

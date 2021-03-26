@@ -1,0 +1,196 @@
+html(lang='en')
+  head
+  body
+    
+    title STAY CLEAN. A stay clean initiative
+    style.
+      body{
+      background-image: url("/images/image4.jpg");
+      background-repeat: no-repeat;
+      }
+      .mybanner{
+      border: 0px;
+      background-color: #45a049;
+      text-align: center;
+      color:beige;
+      font-size: 25px;
+      height: 80px;
+      }
+      #signInLabel{
+      text-align: center;
+      color: green;
+      font-size : 25px
+      
+      }
+      div.transbox{
+      border-radius: 5px;
+      background-color: white ;
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      opacity: 0.8;
+      
+      }
+      #footer{
+      width:100%;
+      height:10%;
+      position:absolute;
+      bottom:0;
+      left:0;
+      background-color: #45a049;
+      }
+      input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: black ;
+      }
+      input[type=password], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
+      input[type=submit] {
+      width: 100%;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #45a049; 
+      }
+      input[type=submit]:hover {
+      background-color:rgb(100, 100, 204);
+      }
+      #regdiv {
+      width:20%;
+      margin:0 auto;
+
+      }
+    |  
+    |      
+    |  
+    |   
+    div
+      .mybanner
+        h2
+          | STAY CLEAN-
+          i The cleanest option!
+          br
+      br
+      br
+      form(action='home', name='loginForm' )
+      
+      
+        .transbox
+          #signInLabel Sign in
+          |       
+          div
+            input#user(type='text', name='username', placeholder='Username')
+          |       
+          div
+            input#password1(type='password', name='password', autocomplete='off', placeholder='Password')
+          br
+          |       
+          div
+            label
+              input#remember(type='checkbox', name='remember', value='remember')
+              | remember me
+            |           
+            input#rem_code(type='code', name='rem_code', placeholder='remember me', hidden='', readonly='')
+            br
+          |   
+          |   
+          #submitDiv
+            input#submit.button(type='submit', value='SIGN IN')
+
+      form(action='employee/employeeReg', name='regForm')
+       
+       
+        #regDiv
+            input#reg.button(type='submit', value='REGISTER')
+           
+        body
+    
+          div
+          #footer
+            p
+              | Author: Akoth Catherine Cecilia
+              br
+              |   
+              a(href='mailto:catherinececilia22@gmail.com') catherinececilia22@gmail.com
+      a(href='homePage.html')
+        script.
+          const userName = document.loginForm.user;
+          const passWord= document.loginForm.password1;
+
+          const userNameFunction = () => {
+              const min = 8;
+              const max = 10;
+              const letters = /^[STC]+[0-9]*$/
+              if (userName.value === '') {
+              alert('please fill in your user name');
+              userName.style.border = '2px solid red';
+              userName.focus();
+              } else {
+              if (userName.value.length < min) {
+              userName.focus();
+              userName.style.border = '2px solid red';
+              alert('username should not be less that 8 characters!');
+              }else{
+              if(userName.value.length>max){
+              userName.focus();
+              userName.style.border = '2px solid red'
+              alert('userName is too long')
+              } else {
+              if (!userName.value.match(letters)) {
+              userName.focus();
+              userName.style.border = '2px solid red';
+              alert('please insert correct user name.');
+              return false;
+              } // Ensures only alphabetical characters are fill-in.
+              return true;
+              } // Ensures the name field has more than 3 characters.
+              return true;
+              } // checks if the name field is empty!
+              return true;
+              };
+              }
+
+              const passwordFunction = () => {
+                const reg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/
+                if (passWord.value === '') {
+                alert('please fill in your Password');
+                passWord.style.border = '2px solid red';
+                passWord.focus();
+                } else {
+                if (!passWord.value.match(reg)) {
+                passWord.focus();
+                passWord.style.border = '2px solid red';
+                alert('password should contain atleast a capital letter and small letter,numeric digit and special character');
+                return false;
+              
+                } // Ensures the name field has more than 3 characters.
+                return true;
+                } // checks if the name field is empty!
+                return true;
+                };
+                
+
+              const validation = () => {
+              userNameFunction();
+              passwordFunction();
+
+                
+              };
+
+              document.loginForm.addEventListener('submit', validation);
