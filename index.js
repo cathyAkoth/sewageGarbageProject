@@ -1,6 +1,7 @@
 const express = require("express") //Importing Express.
+const mongoose = require('mongoose')
 require('dotenv').config();
-const mongoose = require('mongoose');
+
 const employeeRoutes = require("./routes/employeeRoute")
 const loginRoutes = require("./routes/loginRoute")
 const customerRoutes = require("./routes/customerReqRoute")
@@ -13,7 +14,11 @@ const app = express();
 
 mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify:false
+
+
 });
 
 mongoose.connection
@@ -22,7 +27,7 @@ mongoose.connection
   })
   .on('error', (err) => {
     console.log(`Connection error: ${err.message}`);
-  });
+   });
 
   
 // configurations
@@ -35,6 +40,9 @@ app.use('/employee',(req, res, next) => {
   });
 
 app.use(express.static('public'));
+app.use('/public/images', express.static(__dirname + '/public/images'));
+
+app.use(express.urlencoded({extended: true}))
 
 
 // routes.

@@ -1,0 +1,84 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+
+    link(rel='stylesheet', href='/css/driver.css')
+    
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    
+    title register employees
+    
+    
+
+  body
+    .header
+      h1
+        | STAY CLEAN-
+        i THE CLEANEST OPTION
+   
+  .container-fluid
+    .row
+        .col-4 
+        
+        
+                
+        .col-5
+          fieldset
+            legend  EMPLOYEE REGISTRATON/SIGN UP
+
+              form(method='POST',action='/employee/employeeReg', name='employeeRegForm',enctype="multipart/form-data")
+                label(for='fname') First Name
+                |         
+                input#fname(type='text', name='firstname', placeholder=" First Name")
+
+                
+                |     
+                br|         
+                label(for='lname') last Name
+                |         
+                input#lname(type='text', name='lastname', placeholder="last Name")
+                |     
+                |         
+                label(for='gender') Gender
+                |         
+                select#gender(name='gender',placeholder="select gender")
+                  option(value='')
+                  |  
+                  |         
+                  option(value='Female') Female
+                  |         
+                  option(value='Male') Male
+
+                label(for='age') Age
+
+                input#age(type='number', name=age, placeholder="age")
+              
+                label(for='nin') NIN
+                input#nin(type='string', name=nin, placeholder="nin")|         
+                
+                label(for='date') Date of birth|        
+                input#date(type='date', name='date', placeholder='date of birth')
+                |     
+                label(for='telephoneNo') phone Number
+                |         
+                input#telephoneNo(type='string', name='telephoneNo')
+
+                label(for='userName') UserName
+                input#userName(type ='string', name = 'userName',placeholder='uaer Name') 
+
+                label(for = 'password') Password
+                input#password(type="password",name = 'password',placeholder='password')  
+
+                label(for='image') Image
+                input#image(type='file',name='image')    
+                
+                input(type='submit', value='REGISTER')
+
+            .col-3     
+            
+            
+
+              

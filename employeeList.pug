@@ -1,0 +1,80 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+
+    link(rel='stylesheet', href='/css/driver.css')
+    
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    
+    title register employees
+    
+    
+
+  body
+    .header
+      h1
+        | STAY CLEAN-
+        i THE CLEANEST OPTION
+   
+  .container-fluid
+    .row
+        .col-4 
+        
+        
+                
+        .col-5
+          
+    table.table
+        thead.thead-dark
+            tr
+                th Full Name 
+                th NIN
+                th Gender
+                th age 
+                th date
+                th password
+                th phone number
+                th user name 
+                th
+                th
+        tbody
+             if users.length
+              each user in users
+                tr
+                    td #{user.lastname +' '+ user.firstname}
+                    td #{user.nin}
+                    td #{user.gender}
+                    td #{user.age}
+                    td #{user.date}
+                    td #{user.password}
+                    td #{user.phonenumber}
+                    td #{user.username}
+
+              .col-3 
+                        
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
