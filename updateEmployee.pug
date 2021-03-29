@@ -1,0 +1,78 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+
+    link(rel='stylesheet', href='/css/driver.css')
+    
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    title updateEmployee
+    
+    
+
+    
+    
+            h4 Welcome
+            body
+          
+
+    div.form-row
+        div.col.form-group.col-md-12   
+            div.form-row
+                div.col-md-10
+                    p Here is your information #{user.firstname}
+    div.form-row
+        img(src='/'+user.image width="150px" height="170px")
+    form(method="post" action="/employee/update?id="+user._id)
+        table.table
+            thead.thead-dark
+                tr
+                    th Firstname
+                    td 
+                        input.form-control(value = user.firstname name ="firstname")
+                tr
+                    th Lastname
+                    td 
+                        input.form-control(value = user.lastname name ="lastname")
+                tr
+                    th NIN
+                    td 
+                        input.form-control(value = user.nin name ="nin")
+                tr
+                    th Gender
+                        td 
+                            label Male&nbsp
+                            input(value= "male" type="radio" checked = user.gender==="male" name="gender") 
+                            label &nbspFemale&nbsp
+                            input(value= "female" type="radio" checked = user.gender==="female" name="gender")
+                
+                tr
+                    th date of birth
+                        td 
+                             input.form-control(value = user.telephoneNo name ="date")
+
+                tr
+                    th telephoneNo
+                        td 
+                             input.form-control(value = user.telephoneNo name ="telephoneNo")             
+                tr 
+                    th User Name 
+                        td
+                             input.form-control(value = user.userName name ="userName")   
+
+                tr
+                    th Password 
+                        td 
+                               input.form-control(value = user.password name ="password")  
+                tr
+                    th image 
+                        td 
+                               input.form-control(value = user.image name ="image")  
+                  
+
+                
+                tr
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update
