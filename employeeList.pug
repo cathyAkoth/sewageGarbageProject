@@ -22,7 +22,17 @@ html(lang='en')
     
       .card
         .card-body
-            
+
+         div.col.form-group
+            a(href='/employee/createEmployee')  Add New Employee
+        div.pull-right
+         div.col.form-group.col-md-12   
+            form.search(action='/employee')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='nin' placeholder="Enter your search term(nin) ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="submit")   
       table.table
       table.table.table-hover
         thead.table-dark

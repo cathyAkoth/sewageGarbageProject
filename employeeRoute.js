@@ -35,10 +35,15 @@ router.post('/employeeReg', upload.single('image'), async(req, res) => {
     })
    
     router.get('/', async (req, res) => {
-      try{
+        try {
+            // find all the data in the Employee collection
+            let employeeDetails = await Employee.find();
+            if (req.query.nin) {
+                employeeDetails = await Employee.find({ nin: req.query.nin })
+            }
       
         // find all data in employee collection.
-      const employeeDetails = await Employee.find();
+      //const employeeDetails = await Employee.find();
       res.render('employeeList', {users: employeeDetails , title: 'Employee List'})
       } catch (err) {
           res.send('failed to retrieve employee details');
