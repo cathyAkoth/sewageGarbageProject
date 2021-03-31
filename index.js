@@ -1,6 +1,8 @@
 const express = require("express") //Importing Express.
 const mongoose = require('mongoose')
 require('dotenv').config();
+const passport = require('passport');
+const Employee = require('./models/Employee');
 
 const employeeRoutes = require("./routes/employeeRoute")
 const loginRoutes = require("./routes/loginRoute")
@@ -11,6 +13,15 @@ const conductorRoutes = require("./routes/conductorRoute")
 
 
 const app = express();
+
+// Requiring express session.
+const expressSession = require('express-session')({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+});
+
+
 
 mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true,
@@ -38,6 +49,15 @@ app.use('/employee',(req, res, next) => {
     console.log("A new request received at ");
     next();  
   });
+  
+app.use(expressSession);
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(Employee.createStrategy());
+passport.serializeUser(Employee.serializeUser());
+passport.deserializeUser(Employee.deserializeUser());
+
 
 app.use(express.static('public'));
 app.use('/public/images', express.static(__dirname + '/public/images'));

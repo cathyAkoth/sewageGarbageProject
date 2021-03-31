@@ -25,7 +25,13 @@ router.post('/employeeReg', upload.single('image'), async(req, res) => {
     console.log(req.body)
     const employee = new Employee(req.body);
     employee.image = req.file.path;
-    await employee.save()
+    await employee.register(employee,req.body.password,(err)=>{
+        if (err)
+        { 
+         throw err
+        }
+      res.redirect('/login')
+    })
     res.redirect('/employee/')
     }catch(err){
       console.log(err);
