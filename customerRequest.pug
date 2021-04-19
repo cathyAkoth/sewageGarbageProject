@@ -1,0 +1,498 @@
+html
+  head
+    
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    block scripts
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js', integrity='sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js', integrity='sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css')
+    link(rel='stylesheet', href='/css/style.css')     
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN', crossorigin='anonymous')    
+    link(rel='shortcut icon', type='image/png', href='/public/images/favicon.png')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    
+    title register truck drivers
+    style.
+
+     
+      body{
+    
+        /*background-image:url("/images/orange1.jpg");
+        background-repeat:repeat; */ 
+        background:#150019;
+      }
+
+      input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color:honeydew;
+      
+      }
+      input[type=date], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color:#14A098;
+      
+      }
+      input[type=time], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color:#787878;
+      
+      }
+      
+      h5{
+        text-align: center ;
+        color: orange;
+      }
+      input[type=submit] {
+      width: 100%;
+      background-color: orange;
+      color: white;
+      padding: 14px 20px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      }
+      .card{
+        
+        background:#0F292F;
+        top:20%;
+        
+
+      }
+      header{
+      background-color: #0F292F;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height:13%;
+      top:0;
+      z-index: 100;
+      transition: left 300ms;
+      color:green;
+      
+      
+      }
+      #nav-toggle{
+      display:none;
+      }
+      header h2{
+      color: green;
+      }
+      #logoArea{
+        height:150%;
+      }
+      header label span{
+      font-size: 1.7rem;
+      padding-right: 1rem;
+
+        }
+        
+      
+        input[type=submit]:hover {
+        background-color: orangered;
+        }
+        .card-body{
+          color:black;
+          font-weight:bold;
+          padding-bottom:20px;
+          font-size:25px;
+        }
+        .warnP {
+        color:#F13C20;
+        margin: 0;
+        font-size: 0.8rem;
+      }
+      .spacing_inputs {
+        margin-bottom: 25px;
+      }
+
+        
+
+    body
+    .main-content
+        header
+          h2
+            .header-title
+              img#logoArea(src="/images/signage2.png")
+              label(for='')
+                span.img(src="/images/signage2.png")
+              |                 STAY CLEAN
+    
+        .container-fluid
+        .row
+          .col-2
+            
+          
+          .col-8
+            .card 
+              h5 CUSTOMER REQUEST FORM
+              .card-body 
+                
+                  form.row.g-3(method='POST', action='/request/customerRequest', name='customerRequestForm')
+                        .col-md-6
+                          label.form-label(for='fname') First Name
+                          |                   
+                          input#fname.form-control(type='text', name='fname')
+                          p.fname_info.warnP                
+                        .col-md-6
+                          label.form-label(for='lname') Last Name
+                          |                   
+                          input#lname.form-control(type='lname', name='lname')
+                          p.lname_info.warnP           
+                        .col-12
+                          label.form-label(for='nin') Identification Number
+                          |                   
+                          input#nin.form-control(type='text', placeholder='', name='nin')
+                          p.nin_info.warnP            
+                        .col-12
+                          label.form-label(for='location') Customer Location
+                          |                   
+                          input#location.form-control(type='text', placeholder='', name='location')
+                          p.location_info.warnP
+                        |                 
+                        .col-12
+                          label.form-label(for='phone') TEL No.
+                          |                   
+                          input#phone.form-control(type='text', name="phone")
+                          p.phone_info.warnP
+                        |                 
+                        .col-md-4
+                          label.form-label(for='service') Type of Service
+                          |                   
+                          select#service(name='service') 
+                            option(value='') selectservice
+                            option(value='sewage') Sewage
+                             
+                            option(value='Garbage') Garbage
+
+                            option(value='Both') Both
+                            
+                            p.service_info.warnP
+
+                        .col-md-4
+                          label.form-label(for='noTruck') Trucks Needed
+                          |                   
+                          select#noTruck(name='noTruck')
+                            option(value='')
+                            |  
+                            |         
+                            option(value='one') 1
+                            |         
+                            option(value='two') 2
+                            |         
+                            option(value='three') 3
+                            |
+                            p.noTrucks_info.warnP                 
+                        .col-md-4
+                          label.form-label(for='tor') Service Plan
+                          |                   
+                          select#tor.form-select(name='tor')
+                            option(value='') choose a plan
+                            |  
+                            |         
+                            option(value='one time') one time
+                            |         
+                            option(value='subscription') Subscription
+                            p.tor_info.warnP|         
+                            
+                        .col-6
+                          label.form-label(for='dor') Service Date.
+                          |                   
+                          input#dor.form-control(value='',type='date', name="dor")
+                          p.dor_info.warnP
+
+                        .col-6
+                          label.form-label(for='appt') Appointment time.
+                          |                   
+                          input#appt.form-control(type='time', name="appt")
+                          p.appt_info.warnP
+                        .col-6
+                          label(for='truck') Allocate Truck 1:
+                          select#truck(name='truck')
+                            option() choose Truck 
+                              // if any truck recorded in database.
+                            if truck.length 
+                            // iterating through truck./looping.
+                            each car in truck 
+                                option(value=`Code Number: ${car.codeNumber} Reg Number: ${car.regNumber} Driver: ${car.driver}`) #{car.codeNumber}
+                        
+                        
+                        .col-6
+                          label(for='truck1') Allocate Truck 2:
+                          select#truck1(name='truck1')
+                            option() choose Truck 
+                              // if any truck recorded in database.
+                            if truck.length 
+                            // iterating through truck./looping.
+                            each car in truck 
+                                option(value=`Code Number: ${car.codeNumber} Reg Number: ${car.regNumber}`) #{car.codeNumber}
+                        
+                        .col-12
+                          button.btn.btn-primary(type='submit') SAVE
+
+          .col-2
+                  script.
+                      const fname1 = document.customerRequestForm.fname; 
+                      const lname1 = document.customerRequestForm.lname;
+                      const service1 = document.customerRequestForm.service;
+                      const nin1 = document.customerRequestForm.nin;
+                      const noTruck = document.customerRequestForm.noTruck;
+                      const dor1 = document.customerRequestForm.dor;
+                      const location1 = document.customerRequestForm.location;
+                      const appt1 = document.customerRequestForm.appt;
+                      const phone1 = document.customerRequestForm.phone;
+                      const tor1 = document.customerRequestForm.tor;
+
+                      const fname2 = document
+                        .querySelector('.fname_info');
+                      const lname2 = document
+                         .querySelector('.lname_info');
+                      const service2 = document
+                         .querySelector('.service_info');
+                      const nin2 = document
+                        .querySelector('.nin_info');
+                      //- const noTruck2 = document
+                      //-   .querySelector('.noTruck_info');
+                      const dor2 = document
+                        .querySelector('.dor_info');
+                      const location2 = document
+                        .querySelector('.location_info');
+                      const appt2 = document
+                        .querySelector('.appt_info');
+
+
+                      const fnameFunction = () =>{
+                        const min = 2;
+                        const max = 25;
+                        const letters = /^[A-Z]+[a-zA-Z]*$/
+
+                        if (fname1.value === '') {
+                        fname1.style.border = '2px solid red';
+                        fname1.focus();
+                        fname2.textContent = ' name can not be empty!';
+                        event.preventDefault();
+                        } else {
+                        if (fname1.value.length < min) {
+                        fname1.focus();
+                        fname1.style.border = '2px solid red';
+                        fname2.textContent = 'First name must be atleast two letters.';
+                        event.preventDefault();
+                        }else{
+                        if(fname1.value.length>max){
+                        fname1.focus();
+                        fname1.style.border = '2px solid red'
+                        fname2.textContent = 'First name must have maximum of 25 characters.';
+                        event.preventDefault();
+                        } else {
+                        if (!fname1.value.match(letters)) {
+                        fname1.focus();
+                        fname1.style.border = '2px solid red';
+                        fname2.textContent = `Please fill-in your name!`;;
+                        event.preventDefault();
+                        return false;
+                        } 
+                        return true;
+                        } 
+                        return true;
+                        } 
+                        return true;
+                        }
+                        };
+                      
+                        const lnameFunction = () =>{
+                        const min = 2;
+                        const max = 25;
+                        const letters = /^[A-Z]+[a-zA-Z]*$/ 
+
+                        if (lname1.value === '') {
+                        lname1.style.border = '2px solid red';
+                        lname1.focus();
+                        lname2.textContent = ' name can not be empty!';
+                        event.preventDefault();
+                        } else {
+                        if (lname1.value.length < min) {
+                        lname1.focus();
+                        lname1.style.border = '2px solid red';
+                        lname2.textContent = 'First name must be atleast two letters.';
+                        event.preventDefault();
+                        }else{
+                        if(lname1.value.length>max){
+                        lname1.focus();
+                        lname1.style.border = '2px solid red'
+                        lname2.textContent = 'First name must have maximum of 25 characters.';
+                        event.preventDefault();
+                        } else {
+                        if (!lname1.value.match(letters)) {
+                        lname1.focus();
+                        lname1.style.border = '2px solid red';
+                        lname2.textContent = `Please fill-in your name!`;;
+                        event.preventDefault();
+                        return false;
+                        } 
+                        return true;
+                        } 
+                        return true;
+                        } 
+                        return true;
+                        }         
+                        } 
+
+                        const service1Function = () => {
+                          if(service1.value===''){
+                            service1.style.border = '2px solid red'
+                            alert('Please select a service')
+                            //service2.textContent = ('Service type can not be none')
+                            event.preventDefault();
+                            return false;
+                          } else {
+                            return true;
+                          }
+                          return true;
+                        
+                        };
+                
+                      const nin1Function = () => {
+                      //const min2 = 14;
+                      const reg2 = /[A-Z]{2}[0-9]{8}[A-Z]{2}[0-9]{1}[A-Z]{1}/
+                        
+                        if(nin1 .value === ''){
+                        nin1 .style.border= '2px solid red';
+                        nin2.textContent = 'NIN can not be empty!'
+                        nin1.focus();
+                        event.preventDefault();
+                        
+                        }else{
+                         
+                        if(!nin1.value.match(reg2)){
+                        nin1.focus();
+                        nin1.style.border = '2px solid red'
+                        nin2.textContent =('Please insert the correct NIN format.')
+                        event.preventDefault();
+                        return false; 
+                        }
+                        
+                        return true;
+                        }
+                        return true;
+                        }
+
+
+                      const noTruckFunction = () => {
+                        if(noTruck.value===''){
+                          noTruck.style.border = '2px solid red'
+                          //alert('Choose number of Trucks')
+                          //.textContent = ('You must choose number of trucks')
+                          event.preventDefault();
+                          return false;
+                        } else {
+                          return true;
+                        }
+                        return true;
+                      
+                      }                 
+
+                      const dateFunction = () => {
+                        const dateformat = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;
+                        if(!dor1.value.match(dateformat)){
+                          dor1.style.border = '2px solid red'
+                          dor2.textContent = ('You must choose number of trucks')
+                          event.preventDefault();
+                          return false;
+                        } else {
+                          return true;
+                        }
+                        return true;
+                      
+                      };   
+
+                      const timeFunction = () => {
+                        const time = /(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/
+                        if(!appt1.value.match(time)){
+                          appt1.style.border = '2px solid red'
+                          appt2.textContent = ('time can not be none')
+                            event.preventDefault();
+                            return false;
+                          } else {
+                            return true;
+                          }
+                          return true;
+                        
+                        };         
+                       
+
+                      const locationFunction = () => {
+                        if(location1.value===''){
+                            location1.style.border = '2px solid red'
+                            location2.textContent = ('Location can not be none')
+                            event.preventDefault();
+                            return false;
+                          } else {
+                            return true;
+                          }
+                          return true;
+                        
+                        };  
+                      const telephoneFunction = () => {
+
+                        const reg6 = /[+256][0-9]{9}/
+                      
+                        if (phone1.value === ''){
+                          phone1.style.border = '2px solid red';
+                          alert('insert phone number')
+                          phone1.focus();
+                          event.preventDefault();
+                        }else{
+                        if(!phone1.value.match(reg6)){
+                          phone1.style.border = '2px solid red';
+                          alert('follow format +256')
+                          phone1.focus();
+                          event.preventDefault();
+                        }
+                        }
+                        }         
+
+                        
+                        
+                        
+                        //- const validation = () => {
+                        //-   fnameFunction();
+                        //-   lnameFunction();
+                        //-   //service1Function();
+                        //-   nin1Function();
+                        //-   noTruckFunction();
+                        //-   locationFunction();
+                        //-   //dateFunction();
+                        //-   telephoneFunction()
+                        //-   //timeFunction();
+                          
+                        //- };
+
+                        document.customerRequestForm.addEventListener('submit', validation); // Watches the validity of data filled in.
+                  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js', integrity='sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf', crossorigin='anonymous')
+                      
+                      

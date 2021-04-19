@@ -1,0 +1,215 @@
+extends layout 
+block content
+
+
+      title register employees
+      
+        
+
+      style.
+
+          body{
+        
+            background-image:url("/images/orange1.jpg");
+
+            
+          }
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+          margin: 0;
+          }
+
+
+
+          input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background-color:#787878;
+          
+          }
+          input[type=date], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background-color:#787878;
+          
+          }
+        
+        
+        header{
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        position: fixed;
+        left: 0;
+        width: 100%;
+        top:0;
+        z-index: 100;
+        transition: left 300ms;
+        color:green
+        }
+        #nav-toggle{
+        display:none;
+        }
+        header h2{
+        color: green;
+        }
+
+        header label span{
+        font-size: 1.7rem;
+        padding-right: 1rem;
+
+          }
+          input[type=number], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background-color:#787878;
+          -moz-appearance: textfield;
+          
+          }
+          input[type=password], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background-color:#787878;
+          
+          }
+          input[type=string], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background-color:#787878;
+          
+          }
+          input[type=file], select {
+          width: 50%;
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background-color:#787878;
+          
+          }
+          
+          h5{
+            text-align: center ;
+            color: orange;
+          }
+          input[type=submit] {
+          width: 100%;
+          background-color: orange;
+          color: white;
+          padding: 14px 20px;
+          margin: 10px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          }
+          .card{
+            background:#3c3c3c;
+            top:10%;
+            
+
+          }
+          
+          input[type=submit]:hover {
+          background-color: orangered;
+          }
+          .card-body{
+            color:green;
+            font-weight:bold;
+          }
+      body
+      .main-content
+          header
+            h2
+              .header-title
+                label(for='')
+                  span.las.la-bars
+                |                 STAY CLEAN
+            |       
+        
+          .container-fluid
+            .row
+              .col-3
+                
+              
+              .col-5
+                .card 
+                  h5 EMPLOYEE REGISTRATION FORM
+                  .card-body 
+
+                    form(method='POST',action='/employee/employeeReg', name='employeeRegForm',enctype="multipart/form-data")
+                      label(for='fname') First Name
+                      |         
+                      input#fname(type='text', name='firstname', placeholder=" First Name")
+
+                      
+                      |     
+                      br|         
+                      label(for='lname') last Name
+                      |         
+                      input#lname(type='text', name='lastname', placeholder="last Name")
+                      |     
+                      |         
+                      label(for='gender') Gender
+                      |         
+                      select#gender(name='gender',placeholder="select gender")
+                        option(value='')
+                        |  
+                        |         
+                        option(value='Female') Female
+                        |         
+                        option(value='Male') Male
+                      br
+                      label(for='age') Age
+
+                      input#age(type='number', name='age', placeholder="age")
+                    
+                      label(for='nin') NIN
+                      input#nin(type='string', name='nin', placeholder="nin")|         
+                      
+                      label(for='date') Date of birth|        
+                      input#date(type='date', name='date', placeholder='date of birth')
+                      |     
+                      label(for='telephoneNo') phone Number
+                      |         
+                      input#telephoneNo(type='string', name='telephoneNo')
+
+                      label(for='userName') UserName
+                      input#userName(type ='string', name = 'userName',placeholder='uaer Name') 
+
+                      label(for = 'password') Password
+                      input#password(type="password",name = 'password',placeholder='password')  
+
+                      label(for='image') Image
+                      input#image(type='file',name='image')    
+                      br
+                      input(type='submit', value='REGISTER')

@@ -1,0 +1,291 @@
+extends layout
+block content
+
+    
+    style.
+      body{
+      background-image: url("/images/orange1.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      }
+      
+      #signInLabel{
+      text-align: center;
+      color: green;
+      font-size : 25px
+      
+      }
+      div.transbox{
+      border-radius: 4px;
+      background-color: honeydew ;
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      opacity: 0.9;
+      float:right;
+      
+      }
+      #footer{
+      width:100%;
+      height:10%;
+      position:absolute;
+      bottom:0;
+      left:0;
+      background-color: #45a049;
+      }
+      input[type=text], select {
+      width: 100%;
+      padding: 10px 20px;
+      margin: 6px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      box-sizing: border-box;
+      color: black ;
+      }
+      input[type=password], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
+      input[type=submit] {
+      width: 100%;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #45a049; 
+      }
+      input[type=submit]:hover {
+      background-color:rgb(100, 100, 204);
+      }
+      
+
+   
+      #logoArea{
+        width:7%;
+        margin:5px;
+      }
+      #titleArea{
+        width:50%;
+        color:green;
+        text-align:left;
+        font-size:25px;
+        font-family:Garamond;
+        font-weight:bold;
+        
+      }
+      .card{
+       background-color: orange;
+        color: green;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 1;
+        position: fixed;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        font-size:25px;
+      }
+      #pic{
+        float:left;
+      }
+      
+     
+    
+    title STAY CLEAN. sign up
+
+    body
+      div
+      img#logoArea(src="public/images/signage2.png")
+      |                             
+      span#titleArea STAY CLEAN GARBAGE AND SEWAGE MANAGENMENT SYSTEM.
+      |    
+          
+  
+      .card(style='width: 70rem; height:34rem  ')
+       .card-body
+        form(method='POST',action='/signUp', name='signUpForm' )
+        
+        
+          .transbox
+            #signInLabel SIGN UP
+            |       
+            div
+              input#fname(type='text', name='fname', placeholder='first name')
+            |       
+            div
+              input#lname(type='text', name='lname', placeholder='last name')
+                 
+            div
+              input#username(type='text', name='username', placeholder='Username')
+            |       
+            div
+              input#password1(type='password', name='password', autocomplete='off', placeholder='Password')
+              
+            |   
+            #submitDiv
+              input#submit.button(type='submit', value='SIGN UP')
+
+          div 
+            img#pic(src="public/images/truck2.jpg")
+
+        
+      
+           
+      
+    
+         
+        script.
+          const name3 = document.signUpForm.fname;
+          const name4= document.signUpForm.lname;
+          const user1 = document.signUpForm.username;
+          const password = document.signUpForm.password1;
+
+         
+          const name3Function = () =>{
+           
+           const reg3 = /^[A-Z]+[a-zA-Z]*$/
+           const min3 = 2;
+           const max3 = 20;
+          
+           if(name3.value === ''){
+            alert('enter name');
+            name3.style.border = '2px solid red';
+            name3.focus();
+           }else{
+             if(!name3.value.match(reg3)){
+             alert('Name should start with capital letter');
+             name3.style.border = '2px solid red';
+             name3.focus(); 
+             }else{
+               if(name3.value.length < min){
+                 alert('First name should be more than 2 characters');
+                 name3.style.border='2px solid red';
+                 name3.focus();
+             }else{
+               if(name3.value.length > max){
+                 alert('First name is too long');
+                 name3.style.border='2px solid red';
+                 return false;
+               }
+               return true;
+               }
+               return true;
+             }
+
+             return true;
+           };
+          }
+           
+
+          const name4Function = () =>{
+
+          if(name4.value === ''){
+            alert('enter name');
+            name4.style.border = '2px solid red';
+            name4.focus();
+           }else{
+             if(!name4.value.match(reg3)){
+             alert('Name should start with capital letter');
+             name4.style.border = '2px solid red';
+             name4.focus(); 
+             }else{
+               if(name4.value.length < min){
+                 alert('last name should be more than 2 characters');
+                 name4.style.border='2px solid red';
+                 name4.focus();
+             }else{
+               if(name4.value.length > max){
+                 alert('last name is too long');
+                 name4.style.border='2px solid red';
+                 return false;
+               }
+               return true;
+               }
+               return true;
+             }
+
+             return true;
+           };
+          }
+      
+          const userNameFunction = () =>{
+          
+          const reg4 = /[STC]{3}[0-9]{4}/
+
+          if(user1.value = ''){
+          alert('please enter a username');
+          user1.style.border = '2px solid red';
+          user1.focus();
+          }else{
+          if(!user1.value.match(reg4)){
+          alert('wrong format! please use: STC followed by 4 numbers');
+          user1.style.border = '2px solid red';
+          user1.focus(); 
+          return false;
+          }
+          return true;
+          }
+          return true;
+          };
+          }
+      
+
+          const passwordFunction = () => {
+            
+          const min4 = 8;
+          const max4 = 15;
+          const reg5 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]$/
+        
+          if (password.value === '') {
+          alert('please fill in your Password');
+          password.style.border = '2px solid red';
+          password.focus();
+          } else {
+          if(password.value < min4){
+          alert('password is too short');
+          password.style.border = '2px solid red';
+          password.focus();
+          } else {
+          if(password.value > max4){
+          alert('password is too long');
+          password.style.border = '2px solid red';
+          password.focus();
+          } else {
+          if(!password.value.match(reg5)){
+          alert('Password should contain atleast capital letter, small letters,numbers and special characters');
+          password.style.border = '2px solid red';
+          password.focus();
+          }
+          
+          return false;
+          } 
+          return true;
+          } 
+          return true;
+          }
+          return true;
+          };
+          }   
+
+          const validation = () => {
+            name3Function();
+            name4Function();
+            userNameFunction();
+            passwordFunction();  
+            };
+
+
+
+          document.signUpForm.addEventListener('submit', validation);
+

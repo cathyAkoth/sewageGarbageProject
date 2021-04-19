@@ -1,0 +1,82 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+
+    link(rel='stylesheet', href='/css/driver.css')
+    
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    title updateEmployee
+    
+    
+
+    
+    
+            h4 Welcome
+            body
+          
+
+    div.form-row
+        div.col.form-group.col-md-12   
+            div.form-row
+                div.col-md-10
+                    p Here is your information #{user.firstname}
+    div.form-row
+        
+    form(method="post" action="/driver/update?id="+user._id)
+        table.table
+            thead.thead-dark
+                tr
+                    th Firstname
+                    td 
+                        input.form-control(value = user.firstname name ="firstname")
+                tr
+                    th Lastname
+                    td 
+                        input.form-control(value = user.lastname name ="lastname")
+                
+                tr
+                    th Gender
+                        td 
+                            label Male&nbsp
+                            input(value= "male" type="radio" checked = user.gender==="male" name="gender") 
+                            label &nbspFemale&nbsp
+                            input(value= "female" type="radio" checked = user.gender==="female" name="gender")
+                
+                tr
+                    th Age 
+                        td 
+                             input.form-control(value = user.age name ="age")
+
+                tr
+                    th D.O.B
+                        td 
+                             input.form-control(value = user.date name ="date")             
+                tr 
+                    th TelNo. 
+                        td
+                             input.form-control(value = user.telephoneNo name ="telephoneNo")   
+
+                tr
+                    th Residence
+                        td 
+                               input.form-control(value = user.dresidence name ="dresidence")  
+                tr
+                    th past Incidence 
+                        td 
+                            label accidents&nbsp
+                            input(value= "accidents" type="radio" checked = user.pincidences==="accidents" name="pincidences") 
+                            label &nbspfights&nbsp
+                            input(value= "fights" type="radio" checked = user.pincidences==="fights" name="pincidences")
+                            label &nbsptheft&nbsp
+                            input(value= "theft" type="radio" checked = user.pincidences==="theft" name="pincidences") 
+                            label &nbspnone&nbsp
+                            input(value= "none" type="radio" checked = user.pincidences==="none" name="pincidences")
+                  
+
+                
+                tr
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update
