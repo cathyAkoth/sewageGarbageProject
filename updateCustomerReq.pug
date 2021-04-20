@@ -1,0 +1,104 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+
+    link(rel='stylesheet', href='/css/driver.css')
+    
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+    title updateEmployee
+    
+    
+
+    
+    
+            h4 Welcome
+            body
+          
+
+    div.form-row
+        div.col.form-group.col-md-12   
+            div.form-row
+                div.col-md-10
+                    p Here is your information #{user.fname}
+    div.form-row
+        
+    form(method="post" action="/request/update?id="+user._id)
+        table.table
+            thead.thead-dark
+                tr
+                    th Firstname
+                    td 
+                        input.form-control(value = user.fname name ="fname")
+                tr
+                    th Lastname
+                    td 
+                        input.form-control(value = user.lname name ="lname")
+                
+                tr
+                    th service
+                        td 
+                            label ''&nbsp
+                            input(value= " " type="radio" checked = user.service===" " name="service") 
+                            label &nbspSewage&nbsp
+                            input(value= "Sewage" type="radio" checked = user.service==="Sewage" name="service")
+                            label &nbspGarbage&nbsp
+                            input(value= "Garbage" type="radio" checked = user.service==="Garbage" name="service")
+                            label &nbspBoth&nbsp
+                            input(value= "Both" type="radio" checked = user.service==="Both" name="service")
+
+                tr
+                    th Number of Trucks
+                        td 
+                            label ''&nbsp
+                            input(value= "none" type="radio" checked = user.noTrucks===" " name="noTrucks") 
+                            label &nbsp1&nbsp
+                            input(value= "one" type="radio" checked = user.noTrucks==="one" name="noTrucks")
+                            label &nbsp2&nbsp
+                            input(value= "two" type="radio" checked = user.noTrucks==="two" name="noTrucks")
+                            label &3&nbsp
+                            input(value= "three" type="radio" checked = user.noTrucks==="three" name="noTrucks")
+                            label &nbsp4&nbsp
+                            input(value= "four" type="radio" checked = user.noTrucks==="four" name="noTrucks")
+                            label &nbsp5&nbsp
+                            input(value= "five" type="radio" checked = user.noTrucks==="five" name="noTrucks")
+                            label &nbsp6&nbsp
+                            input(value= "six" type="radio" checked = user.noTrucks==="six" name="noTrucks")
+                            label &nbsp7&nbsp
+                            input(value= "seven" type="radio" checked = user.noTrucks==="seven" name="noTrucks")
+                            
+                
+                tr
+                    th Date for Service
+                        td 
+                             input.form-control(value = user.dor name ="dor")
+
+                tr
+                    th Location
+                        td 
+                             input.form-control(value = user.location name ="location")             
+                tr 
+                    th Select a time 
+                        td
+                             input.form-control(value = user.appt name ="appt")   
+
+                tr
+                    th Phone Number
+                        td 
+                               input.form-control(value = user.phone name ="phone")  
+                tr
+                    th Type of request 
+                        td 
+                            label subscription&nbsp
+                            input(value= "subscription" type="radio" checked = user.tor==="subscription" name="tor") 
+                            label &nbspone time&nbsp
+                            input(value= "one time" type="radio" checked = user.tor==="one time" name="tor")
+                            
+                  
+
+                
+                tr
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update

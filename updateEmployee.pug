@@ -31,48 +31,16 @@ html(lang='en')
                 tr
                     th Firstname
                     td 
-                        input.form-control(value = user.firstname name ="firstname")
+                        input.form-control(value = user.fname name ="fname")
                 tr
                     th Lastname
                     td 
-                        input.form-control(value = user.lastname name ="lastname")
+                        input.form-control(value = user.lname name ="lname")
                 tr
-                    th NIN
+                    th Username
                     td 
-                        input.form-control(value = user.nin name ="nin")
-                tr
-                    th Gender
-                        td 
-                            label Male&nbsp
-                            input(value= "male" type="radio" checked = user.gender==="male" name="gender") 
-                            label &nbspFemale&nbsp
-                            input(value= "female" type="radio" checked = user.gender==="female" name="gender")
-                
-                tr
-                    th date of birth
-                        td 
-                             input.form-control(value = user.telephoneNo name ="date")
-
-                tr
-                    th telephoneNo
-                        td 
-                             input.form-control(value = user.telephoneNo name ="telephoneNo")             
-                tr 
-                    th User Name 
-                        td
-                             input.form-control(value = user.userName name ="userName")   
-
-                tr
-                    th Password 
-                        td 
-                               input.form-control(value = user.password name ="password")  
-                tr
-                    th image 
-                        td 
-                               input.form-control(value = user.image name ="image")  
-                  
-
-                
+                        input.form-control(value = user.username name ="username")
+                        
                 tr
                     td(colspan=2)
                         button.btn.btn-dark.btn-block(type="submit") Update

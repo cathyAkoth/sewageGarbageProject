@@ -1,0 +1,413 @@
+extends layout 
+block content
+    
+    title register truck drivers
+    
+    style.
+      body{
+    
+        background-image:url("/images/orange1.jpg");
+        background-repeat:repeat;   
+      }
+
+      input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color:#787878;
+      
+      }
+      input[type=date], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color:#787878;
+      
+      }
+      input[type=number], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color:#787878;
+      
+      }
+      
+      h5{
+        text-align: center ;
+        color: orange;
+      }
+      input[type=submit] {
+      width: 100%;
+      background-color: orange;
+      color: white;
+      padding: 14px 20px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      }
+      .card{
+        background:#3c3c3c;
+        top:14%;
+
+      }
+      header{
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height:13%;
+      top:0;
+      z-index: 100;
+      transition: left 300ms;
+      
+      
+      }
+      #nav-toggle{
+      display:none;
+      }
+      header h2{
+      color: green;
+      }
+      #logoArea{
+        height:150%;
+      }
+      header label span{
+      font-size: 1.7rem;
+      padding-right: 1rem;
+
+        }
+        
+        input[type=submit]:hover {
+        background-color: orangered;
+        }
+        .card-body{
+          color:green;
+          font-weight:bold;
+        }
+ 
+    body
+      .main-content
+          header
+            h2
+              .header-title
+                img#logoArea(src="/images/signage2.png")
+                label(for='')
+                
+                |                 STAY CLEAN
+    
+        
+          .container-fluid
+          .row
+            .col-3
+              
+            
+            .col-5
+              .card 
+                h5 DRIVER REGISTRATION FORM
+                .card-body 
+                
+                  form(method='POST',action='/driver/driverReg', name='driverRegForm')
+                    label(for='fname') First Name
+                    |         
+                    input#fname(type='text', name='firstname', placeholder="Driver's First Name")
+                    |     
+                    |         
+                    label(for='lname') Last Name
+                    |         
+                    input#lname(type='text', name='lastname', placeholder="Driver's First Name")
+                    |     
+                    |         
+                    label(for='gender') Gender
+                    |         
+                    select#gender(name='gender')
+                      option(value='')
+                      |  
+                      |         
+                      option(value='Female') Female
+                      |         
+                      option(value='Male') Male
+
+                    label(for='age') Age 
+
+                    input#age(type='number',name='age')
+                    |         
+                    label(for='date') D.O.B:
+                    |         
+                    input#date(type='date', name='date')
+                    |     
+                    |         
+                    label(for='telephoneNo') phone Number
+                      |         
+                    input#telephoneNo(type='string', name='telephoneNo')
+                    
+                    label(for='nin') NIN
+                    |         
+                    input#nin(type='text', name='nin', placeholder="Driver's Identification Number", *='')
+                    |     
+                    |         
+                    label(for='dresidence') Residence
+                    |         
+                    input#dresidence(type='text', name='dresidence', placeholder="Driver's Residence No.")
+                    |     
+                    |         
+                    label(for='pincidences') Past Incidences
+                    |         
+                    select#pincidences(name='pincidences')
+                      option(value='select option') -select option-
+                      |           
+                      option(value='accidents') accidents
+                      |           
+                      option(value='fights') Fights
+                      |           
+                      option(value='theft') Theft
+                      |           
+                      option(value='none') None
+
+                              
+                      
+
+                  
+
+
+                    input(type='submit', value='Submit')
+              .col-4
+            script.
+              const name1 = document.driverRegForm.fname;
+              const name2= document.driverRegForm.lname;
+              const  gender1= document.driverRegForm.gender;
+              const age1 = document.driverRegForm.age;
+              const date1 = document.driverRegForm.date;
+              const nin1 = document.driverRegForm.nin;
+              const residence = document.driverRegForm.dresidence;
+              const incidences = document.driverRegForm.pincidences;
+              const telephone = document.driverRegForm.telephoneNo;
+              /** Validating first name so that it starts with a capital letter, can not be left empty, has more than 1 character and less than 51 characters.
+              An alert will be thrown incase any of the validations is violated and the field will be highted with red borders.
+              */
+              const nameFunction = () => {
+              
+              const min = 2;
+              const max = 25;
+              const letters = /^[A-Z]+[a-zA-Z]*$/
+              
+              if (name1.value === '') {
+              alert('please fill in the first name');
+              name1.style.border = '2px solid red';
+              name1.focus();
+              event.preventDefault();
+              } else {
+              if (name1.value.length < min) {
+              name1.focus();
+              name1.style.border = '2px solid red';
+              alert('The first name must be more than 1 character!');
+              event.preventDefault();
+              }else{
+              if(name1.value.length>max){
+              name1.focus();
+              name1.style.border = '2px solid red'
+              event.preventDefault();
+              } else {
+              if (!name1.value.match(letters)) {
+              name1.focus();
+              name1.style.border = '2px solid red';
+              alert('The first name must start with a capital letter.');
+              e.preventDefault();
+              return false;
+              } 
+              return true;
+              } 
+              return true;
+              } 
+              return true;
+              };
+              }
+              // for last name
+              const nameFunction1 = () => {
+              
+              const min = 2;
+              const max = 50;
+              const letters = /^[A-Z]+[a-zA-Z]*$/
+              
+              if (name2.value === '') {
+              alert('please fill in the last name!');
+              name2.style.border = '2px solid red';
+              name2.focus();
+              event.preventDefault();
+              }else {
+              if (name2.value.length < min) {
+              name2.focus();
+              name2.style.border = '2px solid red';
+              alert('The last name must be more than 1 character!');
+              event.preventDefault();
+              }else{
+              if(name2.value.length>max){
+              name2.focus();
+              name2.style.border = '2px solid red'
+              event.preventDefault();
+              }else{
+              if (!name2.value.match(letters)) {
+              name2.focus();
+              name2.style.border = '2px solid red';
+              alert('The last name must start with a capital letter.');
+              return false;
+              } 
+              return true;
+              } 
+              return true;
+              } 
+              return true;
+              }
+              }
+
+              const ninFunction = ()=>{
+                const min2 = 14;
+                const reg2 = /[A-Z]{2}[0-9]{8}[A-Z]{2}[0-9]{1}[A-Z]{1}/
+                  
+                  if(nin1 .value === ''){
+                  nin1 .style.border= '2px solid red';
+                  alert('NIN is empty,please fill it');
+                  nin1.focus();
+                  event.preventDefault();
+                  }else{
+                  if(nin1.value.length !== min2){
+                  nin1.focus();
+                  nin1.style.border = '2px solid red';
+                  alert('NIN must have 14 characters')
+                  event.preventDefault();
+                  }else{
+                  if(!nin1.value.match(reg2)){
+                  nin1.focus();
+                  nin1.style.border = '2px solid red'
+                  alert('please insert the correct NIN')
+                  event.preventDefault();
+                  return false; 
+                  }
+                  
+                  return true;
+                  }
+                  return true;
+                  }
+                  return true;
+                  }
+
+              const ageFunction = () => {
+                const min2 = 30;
+
+                if(age1.value === ''){
+                  age1.style.border = '2px solid red';
+                  alert('age is empty');
+                  age1.focus();
+                }else{
+                if(age1.value < min2){
+                  age1.focus();
+                  age1.style.border = '2px solid red';
+                  alert('driver must be 30 years and above')
+                  return false;
+                  }
+                  return true;
+                }
+                return true;
+              
+                  };
+
+                
+              const residenceFunction = () => {
+              if (residence.value === '') {
+              residence.style.border = '2px solid red';
+              alert('Please include driver residence');
+              residence.focus();
+              event.preventDefault();
+              } else {
+              return true;
+              } //  Ensure residence field is not empty.
+              return true;
+              };
+
+              const telephoneFunction = () => {
+
+                const reg6 = /[+256][0-9]{9}/
+              
+                if (telephone.value === ''){
+                  telephone.style.border = '2px solid red';
+                  alert('insert phone number')
+                  telephone.focus();
+                  event.preventDefault();
+                }else{
+                if(!telephone.value.match(reg6)){
+                  telephone.style.border = '2px solid red';
+                  alert('follow format +256')
+                  telephone.focus();
+                  event.preventDefault();
+                }
+                }
+              }
+
+              const incidencesFunction = () => {
+                if(incidences.value === ''){
+                  incidences.style.border = '2px solid red';
+                  alert('please select past incidences');
+                  incidence.focus();
+                  event.preventDefault();
+                }else{
+                  return true;
+                }
+                return true;
+                };
+              
+
+              const genderFunction = ()=>{
+              if(gender1.value === ''){
+              gender1.style.border= '2px solid red';
+              alert('gender is empty,please fill it');
+              gender1.focus();
+              event.preventDefault();
+              }else{
+              return true;
+              }
+              return true
+              };
+
+              
+              const valueDate = ()=>{
+              if(date1.value === 'mm/dd/yyy'){
+              date1.style.border= '2px solid red';
+              alert('date is empty,please fill it');
+              date1.focus();
+              event.preventDefault();
+              }else{
+              return true;
+              }
+              return true
+              };
+              
+              const validation = () => {
+              nameFunction();
+              nameFunction1();
+              residenceFunction();
+              ninFunction();
+              valueDate();
+              genderFunction();
+              telephoneFunction();
+              ageFunction();
+              
+              };
+              document.driverRegForm.addEventListener('submit', validation); // Watches the validity of data filled in.
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+            script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0', crossorigin='anonymous')

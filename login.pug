@@ -1,44 +1,21 @@
-html(lang='en')
+html
   head
-  body
-    
+    meta(charset="UTF-8")
+    meta(name="viewpoint" content="=*width=device-width, initial-scale=1.0*")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title STAY CLEAN. A stay clean initiative
+    link(rel='shortcut icon', type='image/png', href='/public/images/favicon.png')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl', crossorigin='anonymous')
+
+    
     style.
       body{
-      background-image: url("/images/image4.jpg");
+      background-image: url("/images/orange1.jpg");
+      background-position: center;
       background-repeat: no-repeat;
+      background-size: cover;
       }
-      .mybanner{
-      border: 0px;
-      background-color: #45a049;
-      text-align: center;
-      color:beige;
-      font-size: 25px;
-      height: 80px;
-      }
-      #signInLabel{
-      text-align: center;
-      color: green;
-      font-size : 25px
       
-      }
-      div.transbox{
-      border-radius: 5px;
-      background-color: white ;
-      padding: 20px;
-      max-width: 400px;
-      margin: 0 auto;
-      opacity: 0.8;
-      
-      }
-      #footer{
-      width:100%;
-      height:10%;
-      position:absolute;
-      bottom:0;
-      left:0;
-      background-color: #45a049;
-      }
       input[type=text], select {
       width: 100%;
       padding: 12px 20px;
@@ -68,129 +45,187 @@ html(lang='en')
       cursor: pointer;
       background-color: #45a049; 
       }
+      
+      
       input[type=submit]:hover {
-      background-color:rgb(100, 100, 204);
+      background-color:blue;
       }
-      #regdiv {
-      width:20%;
-      margin:0 auto;
-
-      }
-    |  
-    |      
-    |  
-    |   
-    div
-      .mybanner
-        h2
-          | STAY CLEAN-
-          i The cleanest option!
-          br
-      br
-      br
-      form(action='/home', name='loginForm' )
       
-      
-        .transbox
-          #signInLabel Sign in
-          |       
-          div
-            input#user(type='text', name='username', placeholder='Username')
-          |       
-          div
-            input#password1(type='password', name='password', autocomplete='off', placeholder='Password')
-          br
-          |       
-          div
-            label
-              input#remember(type='checkbox', name='remember', value='remember')
-              | remember me
-            |           
-            input#rem_code(type='code', name='rem_code', placeholder='remember me', hidden='', readonly='')
-            br
-          |   
-          |   
-          #submitDiv
-            input#submit.button(type='submit', value='SIGN IN')
-      
-      form(action='employee/employeeReg', name='regForm')
-       
-       
-        #regDiv
-            input#reg.button(type='submit', value='REGISTER')
-           
-        body
     
-          div
-          #footer
-            p
-              | Author: Akoth Catherine Cecilia
-              br
-              |   
-              a(href='mailto:catherinececilia22@gmail.com') catherinececilia22@gmail.com
-      a(href='homePage.html')
-        script.
-          const userName = document.loginForm.user;
-          const passWord= document.loginForm.password1;
+      
+      
+      .open-button {
+        background-color: orange;
+        color: green;
+        padding: 16px 20px;
+        border: none;                  
+        cursor: pointer;
+        opacity: 1;
+        position: fixed;
+        top: 5%;
+        left: 79%;
+        transform: translate(-50%, -50%);
+        width: 180px;
+        font-size:25px;
+      }
 
-          const userNameFunction = () => {
-              const min = 8;
-              const max = 10;
-              const letters = /^[STC]+[0-9]*$/
-              if (userName.value === '') {
-              alert('please fill in your user name');
-              userName.style.border = '2px solid red';
-              userName.focus();
-              } else {
-              if (userName.value.length < min) {
-              userName.focus();
-              userName.style.border = '2px solid red';
-              alert('username should not be less that 8 characters!');
-              }else{
-              if(userName.value.length>max){
-              userName.focus();
-              userName.style.border = '2px solid red'
-              alert('userName is too long')
-              } else {
-              if (!userName.value.match(letters)) {
-              userName.focus();
-              userName.style.border = '2px solid red';
-              alert('please insert correct user name.');
-              return false;
-              } // Ensures only alphabetical characters are fill-in.
-              return true;
-              } // Ensures the name field has more than 3 characters.
-              return true;
-              } // checks if the name field is empty!
-              return true;
-              };
+      /* The popup form - hidden by default */
+      .form-popup {
+        display: none;
+        position: fixed;
+        bottom : 0;
+        right: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity:0.8;
+        
+      }
+
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: honeydew ;
+        color:green;
+        text-align:center;
+      }
+
+      /* Full-width input fields */
+      .form-container input[type=text], .form-container input[type=password] {
+        width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: black ;
+      }
+
+      /* When the inputs get focus, do something */
+      .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Set a style for the submit/login button */
+      .form-container .btn {
+        background-color:green;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 40%;
+        align:center;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: red;
+      }
+
+      #footerArea{
+        position:bottom;
+      }
+
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover, .open-button:hover {
+        background-color:darkgreen;
+        opacity: 0.9;
+      }
+      .btn.btn-success{
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 1;
+        position: fixed;
+        top: 5%;
+        left: 91%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        font-size:20px;
+        color:orange;
+        text-align:center;
+      }
+      #logoArea{
+        width:7%;
+        margin:5px;
+      }
+      #titleArea{
+        width:50%;
+        color:green;
+        text-align:left;
+        font-size:25px;
+        font-family:Garamond;
+        font-weight:bold;
+        
+      }
+
+  
+       
+    body
+      div
+      img#logoArea(src="/images/signage2.png")
+      |                             
+      span#titleArea STAY CLEAN GARBAGE AND SEWAGE MANAGENMENT SYSTEM
+      |                             
+      
+      button.open-button(onclick='openForm()') LOGIN
+    #myForm.form-popup
+      form.form-container(method='POST' action='/login' )
+        h1 Login
+        |     
+        
+        |     
+        input#username(type='text', placeholder='user name', name='username', required='')
+        |     
+        
+        |     
+        input#password(type='password', placeholder='Enter Password', name='password', required='')
+        |     
+        button.btn(type='submit') LOGIN
+        |     
+        button.btn.cancel(type='button', onclick='closeForm()') Close
+
+
+form(method='POST',action='/', name='button' )
+        .w3-container
+        
+        |   
+        
+        |   
+        
+        div 
+           
+        a.btn.btn-success(href='/sign/signUp', role='button') REGISTER
+  
+             script.
+              function openForm() {
+              document.getElementById("myForm").style.display = "block";
+              }
+              function closeForm() {
+              document.getElementById("myForm").style.display = "none";
+          
               }
 
-              const passwordFunction = () => {
-                const reg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/
-                if (passWord.value === '') {
-                alert('please fill in your Password');
-                passWord.style.border = '2px solid red';
-                passWord.focus();
-                } else {
-                if (!passWord.value.match(reg)) {
-                passWord.focus();
-                passWord.style.border = '2px solid red';
-                alert('password should contain atleast a capital letter and small letter,numeric digit and special character');
-                return false;
+        //- #footerArea
+        //- #leftFooterArea.innerFooterArea
+        //- | Powered by 
+        //- a(href='http://www.dhis2.org') DHIS 2
+        //- | &nbsp; 
+        //- span#applicationFooter Supported by PEPFAR Uganda
+        //- | &#x9;&#x9;&#x9;
+        //- #rightFooterArea.innerFooterArea
+        //- span#applicationRightFooter
+        //-   | Maintained by 
+        //-   a(href='http://mets.or.ug', target='_blank') METS Program
+        //- | &#x9;&#x9;&#x9;&#x9;
+        //- select#localeSelect(onchange='login.localeChanged()', style='margin-left: 30px')
+        //-   option(value='') [ Change language ]
+       
+
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js', integrity='sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf', crossorigin='anonymous')
               
-                } // Ensures the name field has more than 3 characters.
-                return true;
-                } // checks if the name field is empty!
-                return true;
-                };
-                
-
-              const validation = () => {
-              userNameFunction();
-              passwordFunction();
-
-                
-              };
-
-              document.loginForm.addEventListener('submit', validation);

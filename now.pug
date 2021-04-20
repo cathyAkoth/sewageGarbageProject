@@ -1,0 +1,26 @@
+ tr
+                    th Reg number
+                    |                                     
+                    th code number
+                    |                                     
+                    th Truck service type
+                    |                                     
+                    
+                |                             
+                tbody.table.table-hover
+                  if users.length
+                  each user in users
+                
+                    tr 
+                    td #{user.regNumber}
+                    td #{user.codeNumber}
+                    td #{user.truckService}
+                    td 
+                        a(href='/truck/update/'+user._id) Update 
+                    td
+                        form(method="post" action='/truck/delete')
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-danger.btn-block(type="submit") Delete
+
+                    
+        .col-2
